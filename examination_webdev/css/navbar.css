@@ -18,23 +18,25 @@ body {
     width: 33.33333%;
     height: 100px;
     text-decoration: none;
-    font-size: 30px;   
+    font-size: 3vw;   
 }
 
 .navbar #scheduleId:hover {
     background-image: url("https://www.suzukacircuit.jp/f1_en/images/top_main_dummy.jpg");
     animation: schedule 3s linear 0s 1 normal forwards;
-    
+    color: transparent;
 }
 
 .navbar #driversId:hover {
     background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/191027211727-lewis-hamilton-mexico-grand-prix-exlarge-169.jpg");
     animation: drivers 3s linear 0s 1 normal forwards;
+    color: transparent;
 }
 
 .navbar #constructorsId:hover {
     background-image: url("https://inmotion.dhl/uploads/content/2019/01_Motorsports/01_Formula_1/Page/FPS_SEOv2.png");
     animation: constructors 3s linear 0s 1 normal forwards;
+    color: transparent;
 }
 
 .navbar a:hover {
@@ -70,12 +72,16 @@ body {
 
 @media screen and (max-width: 600px) {
     .navbar a:not(:first-child) {
-        display: none;
+        display: block;
     }
 
     .navbar a.icon {
         float: right;
         display: block;
+    }
+
+    .navbar a {
+        font-size: 5vw;
     }
 }
 

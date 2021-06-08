@@ -34,6 +34,7 @@ function Schema(){
         flaggaelement.id = "flaggId"
         flaggaelement.className = "gridItem"
         flaggaelement.src = flagga
+        flaggaelement.alt = "Flaggan tillhörande hemlandet för Grand Prixen"
         grid.appendChild(flaggaelement)
 
         
@@ -42,4 +43,3 @@ function Schema(){
 
 
 
-window.addEventListener('DOMContentLoaded', Schema, false);

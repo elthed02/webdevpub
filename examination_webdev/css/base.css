@@ -16,12 +16,13 @@
 #grid2-container {
     
     width: 60%;
-    background-color: rgb(87, 6, 87);
-    display:grid;
+    
+    display:block;
     grid-template-columns: auto;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px;
-    row-gap: 10px;
+    grid-template-rows: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;  /*https://getcssscan.com/css-box-shadow-examples*/
     margin-top: 80px;
+    margin-bottom: 200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -39,6 +40,109 @@
 
 
 
+#divider {
+    height: 10px;
+    width: 100%;
+    background-color: purple;
+}
+
+
+
+:root{
+    --background: #fefefe;
+    --text: #4b507a;
+    
+    --cyan: repeating-linear-gradient(to right,   #E70000 0px, #E70000 16.66666%,   #FF8C00 16.666666%, #FF8C00 33.333333%,   #FFEF00 33.3333333%, #FFEF00 50%,  #00811F 50%, #00811F 66.6666666%,   #0044FF 66.666666%, #0044FF 83.3333333333%,   #760089 83.333333px,#760089 100%);
+    --yellow: #fbca67;
+    --orange: #ff8a30;
+    --red: #f45e61;
+    --purple: #6477b9;
+    --blue: #0eb7da;
+ }
+ 
+ #parent {
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    
+    transition: color 0.25s;
+    
+    box-shadow: inset 0 0 0 2px var(--red);
+    color: var(--red);
+    font-size: inherit;
+    font-weight: 700;
+  
+    position: relative;
+    vertical-align: middle;
+  
+    
+  }
+
+  
+
+  #parent::before,
+  #parent::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+#parent::before,
+#parent::after {
+  border: 10px solid transparent;
+  width: 0;
+  height: 0;
+}
+
+#parent::before {
+  top: 0;
+  left: 0;
+}
+
+#parent::after {
+  bottom: 0;
+  right: 0;
+}
+
+#parent:hover {
+  color: var(--cyan);
+  background: linear-gradient(
+      35deg,
+      black,
+      gray
+    );
+}
+
+#parent:hover::before,
+#parent:hover::after {
+  width: 100%;
+  height: 100%;
+  
+}
+
+#parent:hover::before {
+  border-top-color: purple; 
+  border-right-color: red;
+  transition:
+    width 0.25s ease-out,
+    height 0.25s ease-out 0.25s; 
+    
+}
+
+#parent:hover::after {
+  border-bottom-color: blue;
+  border-left-color: yellow;
+  transition:
+    border-color 0s ease-out 0.5s,
+    width 0.25s ease-out 0.5s,
+    height 0.25s ease-out 0.75s;
+}
+    
+
 #fullDriverGrid {
     height: 300px;
     width: 100%;
@@ -47,33 +151,33 @@
     grid-auto-rows: 80px 220px;
     margin-left: auto;
     margin-right: auto;
-    background-color: purple;
+    background: linear-gradient(
+      35deg,
+      black,
+      gray
+    );
+    
 }
 
-#fullName {
+
+.fullName {
     text-align: center;
     vertical-align: center;
     line-height: 80px;
-    font-size: 45px;
-    font-weight: bold;
-    color: white;
+    font-size: 3vw;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, red, red);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 
-
-#driverTeam {
-    text-align: center;
-    vertical-align: center;
-    line-height: 220px;
-    font-size: 45px;
-    
-    color: white;
-}
 
 #driverImg {
     width: 55%;
     height: 220px;
-    
+    border-radius: 50%;
+    margin-left: 10px;
+    object-fit: cover;
 }
 
 #nationImg {
@@ -81,7 +185,8 @@
     height: 140px;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 5px;
+    margin-left: 35px;
+    border-radius: 20%;
 }
 
 #banaId:hover {
@@ -102,7 +207,7 @@
     text-align: center;
     vertical-align: center;
     line-height: 125px;
-    font-size: 30px;
+    font-size: 2vw;
     font-weight: bold;
 }
 
@@ -111,7 +216,7 @@
     text-align: center;
     vertical-align: center;
     line-height: 100px;
-    font-size: 40px;
+    font-size: 2.5vw;
     font-weight: bold;
 }
 
@@ -120,7 +225,7 @@
     text-align: center;
     vertical-align: center;
     line-height: 100px;
-    font-size: 50px;
+    font-size: 4vw;
     font-weight: bold;
     font-style: oblique;
 }
@@ -129,7 +234,8 @@
     width: 150px;
     height: 90px;
     margin-top: 5px;
-    margin-left: 60px;
+    margin-left: 40%;
+    margin-right: 40%;
     
 }
 
@@ -161,9 +267,67 @@ body {
     vertical-align: center;
     line-height: 125px;
     font-style: oblique;
-    font-size: 25px;
+    font-size: 2.5vw;
+    font-family: Arial, Helvetica, sans-serif;
     margin-left: 10%;
 }
+
+#team {
+    font-size: 4vw;
+    line-height: 220px;
+}
+
+
+@media screen and (max-width: 772px){
+   
+
+    #points {
+        opacity: 0;
+    }
+
+    .logoId {
+        margin-left: 40%;
+        margin-right: auto;
+    }
+
+    .grid2-item {
+        font-size: 3vw;
+    }
+
+    #nummer {
+        font-size: 4.5vw;
+    }
+
+    #fullDriverGrid {
+        height: 200px;
+    }
+
+    #driverImg {
+        height: 120px;
+    }
+
+    #nationImg {
+        height: 60px;
+        margin-top: 30px;
+        margin-left: 10px;
+    }
+
+    #team {
+        font-size: 3.5vw;
+        line-height: 120px;
+        
+    }
+
+    #parent::before,
+#parent::after {
+  border: 5px solid transparent;
+  width: 0;
+  height: 0;
+}
+};
+
+
+    
 
 
 
