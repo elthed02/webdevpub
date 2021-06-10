@@ -84,6 +84,7 @@ function Drivers(){
         driverimageelement.id = "driverImg"
         driverimageelement.src = driverImage
         driverimageelement.alt = "Bild på föraren"
+        driverimageelement.loading = "lazy"
         driverimageandnationelement.appendChild(driverimageelement)
 
         let drivernationelement = document.createElement("img")
