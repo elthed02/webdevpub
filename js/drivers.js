@@ -109,8 +109,11 @@ function Drivers(){
             fullDriverGrid.style.display = "grid"; 
             divider.style.backgroundColor = "black"; 
             
-    }
-        parent.onmouseleave = function(){fullDriverGrid.style.display = "none"; divider.style.backgroundColor = "purple"}
+        }
+        parent.onmouseleave = function(){
+            fullDriverGrid.style.display = "none"; 
+            divider.style.backgroundColor = "purple"
+        }
 
         parent.appendChild(driverGrid)
         parent.appendChild(fullDriverGrid)
